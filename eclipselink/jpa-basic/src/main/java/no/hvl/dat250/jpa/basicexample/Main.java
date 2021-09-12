@@ -2,10 +2,8 @@ package no.hvl.dat250.jpa.basicexample;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 
 public class Main {
     private static final String PERSISTENCE_UNIT_NAME = "todos";
@@ -30,6 +28,8 @@ public class Main {
         em.persist(todo);
         em.getTransaction().commit();
 
+        // create new banking system
+        // Person per = new Person();
         em.close();
     }
 }
