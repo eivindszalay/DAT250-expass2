@@ -37,4 +37,25 @@
         </properties>
     </persistence-unit>
 
+    <persistence-unit name="creditCards" transaction-type="RESOURCE_LOCAL">
+        <class>no.hvl.dat250.jpa.basicexample.part2.Address</class>
+        <class>no.hvl.dat250.jpa.basicexample.part2.Bank</class>
+        <class>no.hvl.dat250.jpa.basicexample.part2.CreditCard</class>
+        <class>no.hvl.dat250.jpa.basicexample.part2.Person</class>
+        <class>no.hvl.dat250.jpa.basicexample.part2.Pincode</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:derby:/Users/eivindszalay/Master/H21/DAT250/expassigns/expass2/dat250-jpa-example/credidCardsDB;create=true" />
+            <property name="javax.persistence.jdbc.user" value="test" />
+            <property name="javax.persistence.jdbc.password" value="test" />
+
+            <!-- EclipseLink should create the database schema automatically -->
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode"
+                      value="database" />
+        </properties>
+    </persistence-unit>
+
 </persistence>
